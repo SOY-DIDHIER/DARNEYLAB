@@ -1,6 +1,6 @@
-# 🖥️ DHEXIO — Infraestructura de Homelab
+# 🖥️ DARNEYLAB — Infraestructura de Homelab
 
-Proyecto de infraestructura propio: diseño, despliegue y administración de un entorno completo con Active Directory, segmentación de red, firewall, virtualización de servicios y seguridad.
+Proyecto de infraestructura propio: diseño, despliegue y administración de un entorno completo con Active Directory, PKI interna, clúster Kubernetes en alta disponibilidad, segmentación de red, firewall, VPN y seguridad.
 
 Documentado fase por fase como registro técnico del trabajo realizado.
 
@@ -10,15 +10,17 @@ Documentado fase por fase como registro técnico del trabajo realizado.
 
 | Componente | Detalle |
 |---|---|
-| Servidor 1 | Lenovo M90q — Ubuntu Server + Docker |
-| Servidor 2 | Lenovo M710 — Windows Server 2022 |
+| Nodo 1 (k3s) | Lenovo M90q — Ubuntu Server |
+| Nodo 2 (k3s) | Lenovo M700 — Ubuntu Server |
+| Nodo 3 (k3s) | Lenovo M700 — Ubuntu Server |
+| Servidor Windows | Lenovo M710 — Windows Server 2022 (Active Directory + CA interna) |
+| Firewall | Lenovo M700 — OPNsense |
 | Switch principal | TP-Link SG608E |
 | Switches de laboratorio | Cisco 2950 / Cisco 2960 |
-| Firewall | OPNsense |
 
 ## 📍 Topología de Red
 
-![Topología DHEXIO](TOPOLOGIA%20RED%20HOMELAD%20DHEXIO.jpg)
+![Topología DARNEYLAB](TOPOLOGIA%20RED%20HOMELAB%20DARNEYLAB.jpg)
 
 ## 🧪 Fase 2 — Simulación de VLANs y Routing (Cisco Packet Tracer)
 
@@ -34,11 +36,12 @@ Antes de aplicar la segmentación en los switches Cisco reales del laboratorio (
 |---|---|
 | Fase 1 — Topología y segmentación VLANs | ✅ Completado |
 | Fase 2 — Simulación VLANs (Packet Tracer) | ✅ Completado |
-| Fase 3 — Active Directory | 🔨 En construcción |
-| Fase 4 — OPNsense (NAT, routing, firewall) | 🔨 En construcción |
-| Fase 5 — Docker / servicios | 🔨 En construcción |
-| Fase 6 — VPN WireGuard | 🔨 En construcción |
-| Fase 7 — Hardening y seguridad | 🔨 En construcción |
+| Fase 3 — Active Directory (AD DS + CA/PKI interna) | ✅ Completado |
+| Fase 4 — OPNsense (NAT, routing, firewall) | ✅ Completado |
+| Fase 5 — Kubernetes (k3s, 3 nodos en alta disponibilidad) | ✅ Completado |
+| Fase 6 — VPN WireGuard (acceso remoto) | ✅ Completado |
+| Fase 7 — Almacenamiento distribuido (Longhorn) | 🔨 En construcción |
+| Fase 8 — Hardening y seguridad | 🔨 En construcción |
 
 ---
 
